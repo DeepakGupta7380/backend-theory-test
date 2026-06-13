@@ -138,3 +138,50 @@ Ans: In MongoDB, find() returns multiple documents as an array based on a filter
 the first matching single document, and findById() is a shortcut to find a document using its unique _id 
 field. find() 
 is used for listing data, while findOne() and findById() are used when a single record is needed.
+
+
+Q:16. Write a MongoDB query to:
+
+
+
+Find all users above age 25
+
+Update a user's email
+
+Delete users with inactive status
+
+Ans: In MongoDB, we use find() with $gt to get users above age 25, updateOne() or findByIdAndUpdate() to update a 
+user's email, and deleteMany() to remove users with inactive status. 
+These operations are commonly used in CRUD APIs with Mongoose in Node.js applications.
+
+
+Q:17. Explain MongoDB relationships. Create schemas for:
+
+
+
+User
+
+Orders where one user can have multiple orders.
+
+
+Ans: In MongoDB, a one-to-many relationship is implemented using referencing. One user can have multiple orders, 
+and each order stores the user's ObjectId as a reference. We use ref in Mongoose and populate() to retrieve related 
+data.
+ This approach is scalable and commonly used in real-world applications compared to embedding.
+
+
+ Q:18.What is aggregation in MongoDB? Write an aggregation query to find total sales by category.
+
+ Ans: Aggregation in MongoDB is a data processing framework that allows operations like filtering, grouping, 
+ and calculating results using a pipeline of stages. To find total sales by category, we use the $group stage 
+ with $sum to aggregate 
+ prices for each category and return the total sales per category.
+
+
+ Q:19.Implement file/image upload API in Express using a package like Multer.
+
+
+ Ans: File upload in Express is handled using Multer middleware. Multer processes multipart/form-data and stores files 
+ on disk or memory. We configure storage, filename, and file filters, then use methods like upload.single() for single 
+ file uploads or upload.array() for multiple files. 
+ The uploaded file details are accessible via req.file or req.files.
